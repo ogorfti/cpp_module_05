@@ -6,13 +6,15 @@
 /*   By: ogorfti <ogorfti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:56:20 by ogorfti           #+#    #+#             */
-/*   Updated: 2023/10/20 10:44:36 by ogorfti          ###   ########.fr       */
+/*   Updated: 2023/10/20 10:42:50 by ogorfti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "Form.hpp"
+class Form;
 
 class Bureaucrat
 {
@@ -30,6 +32,7 @@ class Bureaucrat
 		Bureaucrat& decrement();
 		std::string getName();
 		int getGrade();
+		void signForm(Form &form);
 
 		class GradeTooHighException : public std::exception
 		{
