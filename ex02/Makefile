@@ -6,7 +6,7 @@
 #    By: ogorfti <ogorfti@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 09:48:47 by ogorfti           #+#    #+#              #
-#    Updated: 2023/10/21 14:39:25 by ogorfti          ###   ########.fr        #
+#    Updated: 2023/10/21 14:42:23 by ogorfti          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = $(wildcard *.cpp)
 
 OBJ_DIR = ../obj
 
-OBJS_PATH = ../obj/ex00
+OBJS_PATH = ../obj/ex02
 
 OBJS = $(addprefix $(OBJS_PATH)/, $(SRCS:.cpp=.o))
 
@@ -29,7 +29,7 @@ NAME = Form
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo "\033[1;32mDONE!\033[0m"
 
 $(OBJS_PATH)/%.o: %.cpp
