@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogorfti <ogorfti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:35:36 by ogorfti           #+#    #+#             */
-/*   Updated: 2023/10/21 16:39:52 by ogorfti          ###   ########.fr       */
+/*   Created: 2023/10/21 14:48:35 by ogorfti           #+#    #+#             */
+/*   Updated: 2023/10/21 16:27:51 by ogorfti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include "Bureaucrat.hpp"
-#include "Intern.hpp"
-#include "AForm.hpp"
 
-int main()
+class Intern
 {
-	try
-	{
-		Bureaucrat ex("Ossssama", 15);
+    public:
+        Intern();
+        Intern(Intern &other);
+        Intern& operator=(Intern &other);
+        ~Intern();
 
-		Intern someRandomIntern;
-		AForm* rrf;
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		rrf->beSigned(ex);
-		ex.executeForm(*rrf);
-		delete rrf;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+        AForm* makeForm(std::string _name, std::string _target);
+};

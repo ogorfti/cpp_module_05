@@ -6,7 +6,7 @@
 /*   By: ogorfti <ogorfti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:53:55 by ogorfti           #+#    #+#             */
-/*   Updated: 2023/10/21 12:52:35 by ogorfti          ###   ########.fr       */
+/*   Updated: 2023/10/21 16:31:55 by ogorfti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AForm
 		AForm(const std::string newName, const int newGardeSigne, const int newGardeExecute);
 		AForm(const AForm &other);
 		AForm& operator=(AForm &other);
-		~AForm();
+		virtual ~AForm();
 
 		std::string getName() const;
 		int getGardeSigne() const;
