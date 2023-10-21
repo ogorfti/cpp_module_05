@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ogorfti <ogorfti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 18:35:36 by ogorfti           #+#    #+#             */
-/*   Updated: 2023/10/21 14:37:27 by ogorfti          ###   ########.fr       */
+/*   Created: 2023/10/20 14:47:11 by ogorfti           #+#    #+#             */
+/*   Updated: 2023/10/21 13:28:33 by ogorfti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#pragma once
+
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include <fstream>
 
-int main()
+class RobotomyRequestForm : public AForm
 {
-	try
-	{
-		Bureaucrat ex("Ossssama", 15);
-		RobotomyRequestForm tree("test");
-		tree.beSigned(ex);
-		ex.executeForm(tree);
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+	private:
+		std::string target;
+	public:
+		RobotomyRequestForm();
+		RobotomyRequestForm(std::string _target);
+		RobotomyRequestForm(RobotomyRequestForm &other);
+		RobotomyRequestForm& operator=(RobotomyRequestForm &other);
+		~RobotomyRequestForm();
+		void execute(Bureaucrat const & executor) const;
+};

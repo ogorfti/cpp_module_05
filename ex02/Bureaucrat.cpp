@@ -6,7 +6,7 @@
 /*   By: ogorfti <ogorfti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 08:59:40 by ogorfti           #+#    #+#             */
-/*   Updated: 2023/10/21 13:17:20 by ogorfti          ###   ########.fr       */
+/*   Updated: 2023/10/21 14:34:03 by ogorfti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,13 +116,6 @@ void Bureaucrat::signForm(AForm &form)
 
 void Bureaucrat::executeForm(AForm const & form)
 {
-	// try
-	// {
-		form.execute(*this);
-		std::cout << getName() << " executed " << form.getName() << std::endl;
-	// }
-	// catch(const std::exception& e)
-	// {
-	// 	std::cerr << e.what() << '\n';
-	// }
+	form.execute(*this);
+	std::cout << getName() << " executed " << form.getName() << std::endl;
 }
